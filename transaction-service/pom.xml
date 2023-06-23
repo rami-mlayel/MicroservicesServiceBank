@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.esprit</groupId>
-	<artifactId>offre-service</artifactId>
+	<artifactId>transaction-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>offre-service</name>
+	<name>transaction-service</name>
 	<description>offre microservice</description>
 	<properties>
 		<java.version>11</java.version>
