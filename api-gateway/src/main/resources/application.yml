@@ -37,10 +37,10 @@ spring:
           uri: lb://employee-service
           predicates:
             - Path=/employees/**
-        - id: offre-service
-          uri: lb://offre-service
+        - id: transaction-service
+          uri: lb://transaction-service
           predicates:
-            - Path=/offres/**
+            - Path=/transaction/**
 
 eureka:
   instance:
