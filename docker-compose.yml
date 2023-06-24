@@ -1,19 +1,18 @@
 version: "3.8"
 services:
     Candidate:
-      container_name: candidate-service
-      build: ./candidate-service
+      container_name: account-service
+      build: ./account-service
       ports:
         - "8083:8083"
-      hostname: candidate
+      hostname: account
       environment:
         - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka-server:8761/eureka/
         - SPRING_CLOUD_CONFIG_URI=http://configserver:8888/
 
-      image: "candidate-service"
+      image: "account-service"
       depends_on:
         - Eureka
-        - Mongo
         - configserver
 
 
