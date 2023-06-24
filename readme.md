@@ -34,9 +34,12 @@ Navigate to the project directory.
 
 Run the following command to start the containers:
 
-bash
-Copy code
+
 docker-compose up
+
+
+
+
 Wait for the services to start. Once they are up and running, you can access the different services through their respective ports as specified in the docker-compose.yml file.
 Conclusion
 This microservices project demonstrates a scalable and modular architecture that enables independent development and deployment of different services. By leveraging Docker and Docker Compose, the project simplifies the containerization and orchestration of the services, making it easier to manage and maintain the entire system.
