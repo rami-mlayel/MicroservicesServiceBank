@@ -1,5 +1,18 @@
 version: "3.8"
 services:
+  Candidate:
+    container_name: account-service
+    build: ./account-service
+    ports:
+      - "8083:8083"
+    hostname: account
+    environment:
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka-server:8761/eureka/
+      - SPRING_CLOUD_CONFIG_URI=http://configserver:8888/
+
+    image: "account-service"
+    depends_on:
+      - Eureka
     User:
       container_name: user-service
       build: ./user-service
