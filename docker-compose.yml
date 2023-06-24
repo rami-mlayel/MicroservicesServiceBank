@@ -11,9 +11,7 @@ services:
       image: "user-service"
       depends_on:
         - Eureka
-        - configserver
-      networks:
-        - esprit-project-network
+
     loan:
       container_name: loan-service
       build: ./loan-service
