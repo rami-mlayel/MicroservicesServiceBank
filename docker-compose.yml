@@ -1,66 +1,40 @@
 version: "3.8"
 services:
-    Candidate:
-      container_name: account-service
-      build: ./account-service
+    User:
+      container_name: user-service
+      build: ./user-service
       ports:
-        - "8083:8083"
-      hostname: account
+        - "8087:8087"
+      hostname: users
       environment:
         - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka-server:8761/eureka/
-        - SPRING_CLOUD_CONFIG_URI=http://configserver:8888/
-
-      image: "account-service"
+      image: "user-service"
       depends_on:
         - Eureka
         - configserver
-
-
-    Candidature:
-      container_name: candidature-service
-      build: ./candidature-service
-      ports:
-        - "8084:8084"
-      hostname: candidate
-      environment:
-        - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka-server:8761/eureka/
-      image: "candidature-service"
-      depends_on:
-        - Eureka
-
-    Employee:
-      container_name: employee-service
-      build: ./employee-service
-      ports:
-        - "8087:8087"
-      hostname: employee
-      environment:
-        - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka-server:8761/eureka/
-      image: "employee-service"
-      depends_on:
-        - Eureka
-
-    Evaluation:
-      container_name: evaluation-service
-      build: ./evalulation-service
+      networks:
+        - esprit-project-network
+    loan:
+      container_name: loan-service
+      build: ./loan-service
       ports:
         - "8085:8085"
-      hostname: evaluation
+      hostname: loan
       environment:
         - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka-server:8761/eureka/
-      image: "evaluation-service"
+      image: "loan-service"
       depends_on:
         - Eureka
 
-    Offre:
-      container_name: offre-service
-      build: ./offre-service
+    Transaction:
+      container_name: transaction-service
+      build: ./transaction-service
       ports:
-        - "8086:8086"
-      hostname: offre
+        - "8087:8087"
+      hostname: transaction
       environment:
         - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka-server:8761/eureka/
-      image: "offre-service"
+      image: "transaction-service"
       depends_on:
         - Eureka
 
@@ -87,20 +61,6 @@ services:
       image: "api-gateway"
       depends_on:
         - Eureka
-
-    node:
-        container_name: node-service
-        image: "node-service"
-        build: ./node-service
-        ports:
-          - "3000:5000"
-        hostname: node-service
-        environment:
-          - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=eureka-server
-        depends_on:
-          - "Eureka"
-          - "Mongo"
-        command: "node ./index.js"
 
     Eureka:
       container_name: eureka-server
