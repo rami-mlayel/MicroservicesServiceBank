@@ -36,12 +36,7 @@ public class AuthenticationMicroserviceApplication {
 			roleService.saveRole(Role.builder().name("USER").build());
 
 			// init users list
-			userService.saveUser( User.builder().email("faiez.abid@esprit.tn").password("fabid").username("fabid").roles(new  ArrayList<>()).build()) ;
-			userService.saveUser( User.builder().email("nazih.jlassi1@esprit.tn ").password("njlassi").username("njlassi").roles(new  ArrayList<>()).build()) ;
-			userService.saveUser( User.builder().email("marwen.fraj1@esprit.tn ").password("mfraj").username("mfraj").roles(new  ArrayList<>()).build()) ;
-			userService.saveUser( User.builder().email("marwa.mahdoui1@esprit.tn").password("mmahdoui").username("mmahdoui").roles(new  ArrayList<>()).build()) ;
-			userService.saveUser( User.builder().email("hamza mohamedhamza.ajlani@esprit.tn ").password("mhajlani").username("mhajlani").roles(new  ArrayList<>()).build()) ;
-			userService.saveUser( User.builder().email("yassin.thabti1@esprit.tn").password("ythabti").username("ythabti").roles(new  ArrayList<>()).build()) ;
+			userService.saveUser( User.builder().email("faiez.abid@esprit.tn").password("mlaabidi").username("mlaabidi").roles(new  ArrayList<>()).build()) ;
 
 
 		} ;
