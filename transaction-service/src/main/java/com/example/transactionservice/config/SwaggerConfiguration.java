@@ -1,4 +1,4 @@
-package ecommerce.cartservice.config;
+package com.example.transactionservice.config;
 
 
 import org.springframework.context.annotation.Bean;
@@ -22,7 +22,7 @@ public class SwaggerConfiguration {
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
                 .apis(RequestHandlerSelectors
-                        .basePackage("ecommerce.cartservice"))
+                        .basePackage("com.example.transactionservice"))
                 .paths(PathSelectors.any())
                 .build()
                 .apiInfo(getApiInfo());
@@ -34,7 +34,7 @@ public class SwaggerConfiguration {
                 "App to demonstrate MicroService based on Spring Boot",
                 "0.0.1-SNAPSHOT",
                 "Terms of Service",
-                new Contact("Yassin THABTI",
+                new Contact("User User",
                         "",
                         ""),
                 "",
