@@ -13,30 +13,10 @@ spring:
             allowed-methods: "*"
             allowed-headers: "*"
       routes:
-        - id: account-service
-          uri: lb://account-service
+        - id: user-service
+          uri: lb://user-service
           predicates:
-            - Path=/accounts/**
-        - id : candidature-service
-          uri: lb://candidature-service
-          predicates:
-            - Path=/candidatures/**
-        - id : auth-service
-          uri: lb://auth-service
-          predicates:
-            - Path=/v1/**
-        - id: evaluation-service
-          uri: lb://evaluation-service
-          predicates:
-            - Path=/evaluations/**
-        - id: node-service
-          uri: lb://node-service
-          predicates:
-            - Path=/api/**
-        - id: employee-service
-          uri: lb://employee-service
-          predicates:
-            - Path=/employees/**
+            - Path=/users/**
         - id: transaction-service
           uri: lb://transaction-service
           predicates:
