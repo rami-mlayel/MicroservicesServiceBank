@@ -1,4 +1,4 @@
-package ecommerce.cartservice;
+package bank.service;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -6,9 +6,9 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
 @SpringBootApplication
 @EnableEurekaClient
-public class CandidateServiceApplication {
+public class AccountServiceApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(CandidateServiceApplication.class, args);
+		SpringApplication.run(AccountServiceApplication.class, args);
 	}
 }
